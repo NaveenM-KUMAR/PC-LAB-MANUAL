@@ -20,9 +20,8 @@ if(is_prime(i))
 printf("%d",i);
 }
 printf("\n");
-double start_time,end_time;
-
   
+double start_time,end_time;
 start_time=omp_get_wtime();
 for(int i=1;i<=n;i++){
 is_prime(i);
