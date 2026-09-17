@@ -21,17 +21,22 @@ printf("%d",i);
 }
 printf("\n");
 double start_time,end_time;
+
+  
 start_time=omp_get_wtime();
 for(int i=1;i<=n;i++){
 is_prime(i);
 }
+
 end_time=omp_get_wtime();
 printf("Serial Time: %f seconds\n",end_time-start_time);
+
 start_time=omp_get_wtime();
 #pragma omp parallel for
 for(int i=1;i<=n;i++){
 is_prime(i);
 }
+
 end_time=omp_get_wtime();
 printf("Parallel Time:%f seconds\n",end_time-start_time);
 return 0;
